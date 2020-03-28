@@ -77,7 +77,6 @@ ax = sns.boxplot(x="Type", y="Score", hue="Gated",
 plt.savefig(str(OUTPUT / "boxplot.png"))
 
 for stat_type in ("f1_avg", "f1_weighted", "balanced", "mcc"):
-    stat_type = "f1_avg"
     stat_data = data.loc[data["Type"] == stat_type, :]
     ungated_data = stat_data.loc[data["Gated"] == "no", "Score"]
     gated_data = stat_data.loc[data["Gated"] == "yes", "Score"]
