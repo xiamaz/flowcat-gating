@@ -72,6 +72,7 @@ for each metric is used for visualization of results distribution.
 $ ./result_analysis.py
 ```
 
-# Reference gating
+## Literature
 
-For speed, this has been only done in 1 replication initially.
+- Malek M, Taghiyar MJ, Chong L, Finak G, Gottardo R, Brinkman RR. flowDensity: reproducing manual gating of flow cytometry data by automated density-based cell population identification. Bioinformatics. 2015;31(4):606–607. doi:10.1093/bioinformatics/btu677
+- Van Gassen, S., Vens, C., Dhaene, T., Lambrecht, B.N. and Saeys, Y. (2016), FloReMi: Flow density survival regression using minimal feature redundancy. Cytometry, 89: 22-29. doi:10.1002/cyto.a.22734
