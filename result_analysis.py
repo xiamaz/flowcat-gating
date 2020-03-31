@@ -12,11 +12,11 @@ import scipy.stats as sst
 
 from flowcat import utils, io_functions
 
-NAME = "result_analysis"
+NAME = "result_analysis_removeedge"
 
 RESULTS = {
     "path": utils.URLPath("output"),
-    "names": ["classifier_ungated", "classifier_gated_single"],
+    "names": ["classifier_ungated", "classifier_gated_removeedge"],
 }
 
 OUTPUT = utils.URLPath(f"output/{NAME}")
@@ -60,11 +60,11 @@ OUTPUT.mkdir()
 
 result_dirs = get_result_dirs(**RESULTS)
 LOGGER.info(result_dirs["classifier_ungated"].metrics)
-LOGGER.info(result_dirs["classifier_gated_single"].metrics)
+LOGGER.info(result_dirs["classifier_gated_removeedge"].metrics)
 
 ungated = result_dirs["classifier_ungated"].dataframe.stack().reset_index()
 ungated["gated"] = "no"
-gated = result_dirs["classifier_gated_single"].dataframe.stack().reset_index()
+gated = result_dirs["classifier_gated_removeedge"].dataframe.stack().reset_index()
 gated["gated"] = "yes"
 
 data = pd.concat([ungated, gated]).drop("level_0", axis=1).reset_index(drop=True)

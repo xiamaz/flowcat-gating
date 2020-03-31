@@ -9,11 +9,12 @@
 ITERATIONS=5
 
 run_iterations() {
-	for i in $(seq 5 $ITERATIONS); do
+	for i in $(seq 1 $ITERATIONS); do
 		echo "Running iteration $i"
 		$1 $i
 	done
 }
 
 run_iterations "python3 ./train_classifier_ungated.py"
-run_iterations "python3 ./train_classifier_gated_single.py"
+# run_iterations "python3 ./train_classifier_gated_single.py"
+run_iterations "python3 ./train_classifier_gated_removeedge.py"
